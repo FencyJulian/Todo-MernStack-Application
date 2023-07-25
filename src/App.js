@@ -1,25 +1,40 @@
-import logo from './logo.svg';
-import './App.css';
+import React,{useState} from "react";
+import LeftSide from "./components/LeftSide";
+import RightSide from "./components/RightSide";
+import BottomHalf from "./components/BottomHalf";
 
-function App() {
+const App = () => {
+  const [tasks, setTasks] = useState([]);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <div
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+          marginTop: "100px",
+          fontSize: "30px",
+          fontWeight: "bold",
+          fontFamily: "monospace",
+        }}
+      >
+        My Daily Task
+      </div>
+      <div
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+          marginTop: "100px",
+          fontSize: "30px",
+          fontWeight: "bold",
+          fontFamily: "monospace",
+        }}
+      >
+        <LeftSide />
+      </div>
     </div>
   );
-}
+};
 
 export default App;
